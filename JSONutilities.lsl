@@ -79,6 +79,24 @@ default
         // This receives a string and an integer from whoever might send one 
         string receivedString = getJSONstring(json, "stringKey", "default");
         integer receivedInteger = getJSONinteger(json, "integerKey", 0);
+
+        string value = llJsonGetValue(json, ["AKey"]);
+        if (value != JSON_INVALID) {
+            // do more complicated things with string value
+        }
+
+        value = llJsonGetValue(json, ["BKey"]);
+        if (value != JSON_INVALID) {
+            integer ivalue = (integer)value;
+            // do more complicated things with integer value
+        }
+
+        string value = llJsonGetValue(json, ["CKey"]);
+        if (value != JSON_INVALID) {
+            vector vvalue = llList2Vector(moodColors, value);
+            // do more complicated things with vector value
+        }
+
     }
 
 }
